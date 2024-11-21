@@ -38,30 +38,31 @@ The **User Service** is a core microservice in the grocery delivery platform, re
 
 ---
 
-## 4. Database Schema
-+------------------------+               +------------------------+
-|       Users            |               |       Roles            |
-+------------------------+               +------------------------+
-| user_id (PK)          |                | role_id (PK)           |
-| email (unique)        |                | role_name              |
-| phone_number (unique) |                | created_at             |
-| password_hash         |      1         | updated_at             |
-| first_name            |--------------> | user_id (FK)           |
-| last_name             |                +------------------------+
+## 4. Database Schema              
+|       Users            |              
+|------------------------|               
+| user_id (PK)          |               
+| email (unique)        |               
+| phone_number (unique) |                
+| password_hash         |               
+| first_name            |          
+| last_name             |                
 | date_of_birth         |
-| profile_picture       |                   +------------------------+
-| created_at            |        1          |      Preferences       |
-| updated_at            |------------------>+------------------------+
-+------------------------+                  | preference_id (PK)     |
-           |                                | user_id (FK)           |
-           |                                | preference_key         |
-           |                                | preference_value       |
-           |                                | created_at             |
-           |                                | updated_at             |
-           v                                +------------------------+
-+------------------------+
+| profile_picture       |                  
+| created_at            |                   
+| updated_at            |            
+                                            
+|      Preferences       |
+|------------------------|
+| preference_id (PK)     |
+| user_id (FK)           |
+| preference_key         |
+| preference_value       |
+| created_at             |
+| updated_at             |
+
 |  Addresses             |
-+------------------------+
+|------------------------|
 | address_id (PK)       |
 | user_id (FK)          |
 | address_line_1        |
@@ -73,7 +74,17 @@ The **User Service** is a core microservice in the grocery delivery platform, re
 | is_default (boolean)  |
 | created_at            |
 | updated_at            |
-+------------------------+
+
+ |       Roles            |
+ |------------------------|
+ | role_id (PK)           |
+ | role_name              |
+ | created_at             |
+ | updated_at             |
+ | user_id (FK)           |
+
+
+
 ---
 
 ## 5. API Endpoints
@@ -136,10 +147,10 @@ The **User Service** is a core microservice in the grocery delivery platform, re
 ## 9. Milestones
 | Milestone                 | Deliverable                   | Timeline |
 |---------------------------|-------------------------------|----------|
-| User CRUD API             | Basic user management         | Week 1   |
-| Address Management API    | Address-related operations    | Week 2   |
-| Preference Management API | User preferences              | Week 3   |
-| Role Management API       | Role-based access control     | Week 4   |
+| User CRUD API             | Basic user management         |   ASAP   |
+| Address Management API    | Address-related operations    |   ASAP   |
+| Preference Management API | User preferences              |   ASAP   |
+| Role Management API       | Role-based access control     |   ASAP   |
 
 ---
 
